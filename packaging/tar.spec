@@ -13,6 +13,7 @@ License:    GPLv2+
 URL:        http://www.gnu.org/software/tar/
 Source0:    ftp://ftp.gnu.org/pub/gnu/tar/tar-%{version}.tar.gz
 Source1:    tar.1
+Source1001: packaging/tar.manifest 
 Patch0:     tar-1.14-loneZeroWarning.patch
 Patch1:     tar-1.15.1-vfatTruncate.patch
 Patch2:     tar-1.17-testsuite.patch
@@ -66,6 +67,7 @@ the rmt package.
 %patch9 -p1
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static \
     --bindir=/bin \
@@ -84,6 +86,7 @@ rm -rf %{buildroot}%{_prefix}/libexec/rmt
 %docs_package 
 
 %files
+%manifest tar.manifest
 %defattr(-,root,root,-)
 /bin/tar
 
