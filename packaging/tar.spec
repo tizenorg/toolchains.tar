@@ -6,7 +6,7 @@
 Name:       tar
 Summary:    A GNU file archiving program
 Version:    1.17
-Release:    3
+Release:    4
 Epoch:      1
 Group:      Applications/Archiving
 License:    GPLv2+
