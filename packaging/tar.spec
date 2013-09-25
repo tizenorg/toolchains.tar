@@ -90,6 +90,10 @@ do
 	done;
 done
 
+# license
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
+
 %docs_package
 
 %files
@@ -97,5 +101,4 @@ done
 %defattr(-,root,root,-)
 %{_datadir}/license/%{name}
 /bin/tar
-
-
+/usr/share/license/%{name}
