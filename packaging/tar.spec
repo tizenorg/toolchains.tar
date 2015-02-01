@@ -26,6 +26,7 @@ Patch8:     BMC6647-CVE-2010-0624.patch
 Patch9:     BMC6661-CVE-2007-4476.patch
 BuildRequires:  libacl-devel
 
+
 %description
 The GNU tar program saves many files together in one archive and can
 restore individual files (or all of the files) from that archive. Tar
@@ -77,7 +78,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_mandir}/man1
 cp -a %{SOURCE1} %{buildroot}%{_mandir}/man1
 
-rm -rf %{buildroot}%{_prefix}/libexec/rmt
+rm -rf %{buildroot}%{_libexecdir}/rmt
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/license
 for keyword in LICENSE COPYING COPYRIGHT;
@@ -92,9 +93,8 @@ done
 %docs_package
 
 %files
-%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_datadir}/license/%{name}
 /bin/tar
-
+%manifest %{name}.manifest
 
