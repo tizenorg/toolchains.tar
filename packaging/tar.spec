@@ -24,6 +24,7 @@ Patch6:     gcc43.patch
 Patch7:     tar-1.17-gcc4.patch
 Patch8:     BMC6647-CVE-2010-0624.patch
 Patch9:     BMC6661-CVE-2007-4476.patch
+Patch10:    tar-1.17-xattrs-conf.patch
 BuildRequires:  libacl-devel
 
 
@@ -63,6 +64,8 @@ the rmt package.
 %patch8 -p1
 # BMC6661-CVE-2007-4476.patch
 %patch9 -p1
+# tar-1.17-xattrs-conf.patch
+%patch10 -p1
 
 %build
 cp %{SOURCE1001} .
